@@ -1,0 +1,39 @@
+{
+  "groceries": [
+    {
+      "sku-id": "100001A",
+      "title": "Apple",
+      "product_image": "apple",
+      "details": "Green fresh apples",
+      "price": 3.99
+    },
+    {
+      "sku-id": "100002A",
+      "title": "Watermelon",
+      "product_image": "watermelon",
+      "details": "Red ripe watermelons",
+      "price": 2.99
+    },
+    {
+      "sku-id": "100003A",
+      "title": "Red Grapes",
+      "product_image": "grapes",
+      "details": "Seedless red grape",
+      "price": 4.99
+    },
+    {
+      "sku-id": "100004A",
+      "title": "Green Grapes",
+      "product_image": "green-grapes",
+      "details": "Seeded green grapes",
+      "price": 3.99
+    },
+    {
+      "sku-id": "100005A",
+      "title": "Strawberry",
+      "product_image": "strawberry",
+      "details": "Fresh reddish strawberries",
+      "price": 5.99
+    }
+  ]
+}
