@@ -17,6 +17,7 @@ final class GroceryService {
     // MARK: - Private Properties
     
     private lazy var httpService = GroceryHTTPService()
+    private lazy var imageHTTPService = ImageHTTPService.shared
     
     // MARK: - Initializers
     
@@ -94,12 +95,12 @@ extension GroceryService: ImagesAPI {
     
     func fetchImage(imageName: String, completion: @escaping ImageClosure) {
         do {
-            try GroceryHTTPRouter
+            try ImageHTTPRouter
                 .downloadImage(imageName: imageName)
-                .request(using: httpService)
-                .responseData(completionHandler: { result in
-                    completion(result.data)
-                })
+                .download(using: imageHTTPService) { response in
+                    guard let image = response.value else { return }
+                    completion(image)
+                }
         } catch {
             print("Something went wrong while fetching image \(error)")
         }
@@ -107,12 +108,12 @@ extension GroceryService: ImagesAPI {
     
     func fetchThumbnail(imageName: String, completion: @escaping ImageClosure) {
         do {
-            try GroceryHTTPRouter
+            try ImageHTTPRouter
                 .downloadThumbnail(imageName: imageName)
-                .request(using: httpService)
-                .responseData(completionHandler: { result in
-                    completion(result.data)
-                })
+                .download(using: imageHTTPService) { response in
+                    guard let image = response.value else { return }
+                    completion(image)
+                }
         } catch {
             print("Something went wrong while fetching thumbnail \(error)")
         }

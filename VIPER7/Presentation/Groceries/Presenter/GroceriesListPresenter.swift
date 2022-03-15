@@ -54,9 +54,8 @@ extension GroceriesListPresenter: GroceriesListPresenterProtocol {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
             self.useCase.fetchGroceries(self.categoryId) { category in
-                self.useCase.fetchImage(category.image.name) { imageData in
-                    guard let data = imageData else { return }
-                    self.view?.updateCoverImage(imageData: data)
+                self.useCase.fetchImage(category.image.name) { image in
+                    self.view?.updateCoverImage(image: image)
                 }
                 DispatchQueue.main.async {
                     self.view?.updateCoverTitle(title: category.details.uppercased())

@@ -9,6 +9,7 @@ target 'VIPER7' do
 
   pod 'RealmSwift'
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
   target 'VIPER7Tests' do
     inherit! :search_paths

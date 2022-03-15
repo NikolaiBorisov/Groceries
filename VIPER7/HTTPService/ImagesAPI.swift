@@ -5,9 +5,9 @@
 //  Created by NIKOLAI BORISOV on 11.02.2022.
 //
 
-import Foundation
+import UIKit
 
-typealias ImageClosure = (Data?) -> Void
+typealias ImageClosure = (UIImage) -> Void
 
 protocol ImagesAPI {
     func fetchThumbnail(imageName: String, completion: @escaping ImageClosure)

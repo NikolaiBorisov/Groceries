@@ -9,7 +9,7 @@ import UIKit
 
 protocol GroceriesListViewProtocol: AnyObject {
     func updateGroceries(groceriesList: [GroceryItemViewModel])
-    func updateCoverImage(imageData: Data)
+    func updateCoverImage(image: UIImage)
     func updateCoverTitle(title: String)
 }
 
@@ -66,8 +66,7 @@ extension GroceriesListViewController: GroceriesListViewProtocol {
         dataSource = groceriesList
     }
     
-    func updateCoverImage(imageData: Data) {
-        guard let image = UIImage(data: imageData) else { return }
+    func updateCoverImage(image: UIImage) {
         mainView.categoryImageView.image = image
         mainView.stopAnimating()
     }
@@ -86,12 +85,13 @@ extension GroceriesListViewController: UITableViewDataSource {
         let viewModel = dataSource[indexPath.row]
         let cell: GroceryItemCell = tableView.dequeueCell(for: indexPath)
         cell.configure(using: viewModel)
-        self.presenter?.onThumbnailUpdate(imageName: viewModel.image) { data in
+        self.presenter?.onThumbnailUpdate(imageName: viewModel.image) { image in
             DispatchQueue.main.async {
-                guard let data = data,
-                      let image = UIImage(data: data) else { return }
-                cell.updateGroceryIcon(image: image)
-                cell.stopAnimating()
+                let updateCell = tableView.cellForRow(at: indexPath)
+                if updateCell != nil {
+                    cell.updateGroceryIcon(image: image)
+                    cell.stopAnimating()
+                }
             }
         }
         cell.delegate = self

@@ -47,8 +47,7 @@ extension HomeViewController: HomeViewProtocol {
             categoryView.startAnimating()
             categoryView.configure(
                 using: categoriesList[index]) { [weak self] imageName in
-                    self?.presenter?.onFetchThumbnail(imageName: imageName, completion: { data in
-                        guard let image = UIImage(data: data) else { return }
+                    self?.presenter?.onFetchThumbnail(imageName: imageName, completion: { image in
                         DispatchQueue.main.async {
                             categoryView.updateImage(image: image)
                             categoryView.stopAnimating()

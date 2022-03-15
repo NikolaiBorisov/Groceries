@@ -10,7 +10,7 @@ import Foundation
 protocol HomePresenterProtocol {
     func viewDidLoad()
     // func onAddToCart(skuItem: SkuItem)
-    func onFetchThumbnail(imageName: String, completion: @escaping (Data) -> Void)
+    func onFetchThumbnail(imageName: String, completion: @escaping ImageClosure)
     func onCategorySelection(using category: (id: Int, title: String))
 }
 
@@ -50,11 +50,10 @@ extension HomePresenter: HomePresenterProtocol {
         router.routeToGroceriesListing(using: category)
     }
     
-    func onFetchThumbnail(imageName: String, completion: @escaping (Data) -> Void) {
+    func onFetchThumbnail(imageName: String, completion: @escaping ImageClosure) {
         DispatchQueue.global(qos: .background).async {
-            self.useCase?.fetchThumbnail(imageName) { data in
-                guard let data = data else { return }
-                completion(data)
+            self.useCase?.fetchThumbnail(imageName) { image in
+                completion(image)
             }
         }
     }
