@@ -12,6 +12,7 @@ final class GroceriesListView: UIView {
     // MARK: - Public Properties
     
     public var coverHeightConstraint = NSLayoutConstraint()
+    public var categoryImageViewHeight: CGFloat = 200
     
     public lazy var groceriesTableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -20,8 +21,8 @@ final class GroceriesListView: UIView {
         $0.contentInsetAdjustmentBehavior = .never
         $0.separatorColor = .systemGreen
         $0.backgroundColor = .white
-        $0.estimatedRowHeight = 120
         $0.rowHeight = UITableView.automaticDimension
+        $0.autoresizesSubviews = true
         return $0
     }(UITableView())
     
@@ -29,17 +30,22 @@ final class GroceriesListView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleToFill
         $0.clipsToBounds = true
-        $0.image = UIImage(named: "groceries")
         return $0
     }(UIImageView())
     
     public lazy var coverDescriptionLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.textAlignment = .left
+        $0.textAlignment = .center
         $0.textColor = .white
-        $0.text = "Text!"
+        $0.numberOfLines = 0
+        $0.clipsToBounds = true
+        $0.backgroundColor = .darkGray.withAlphaComponent(0.8)
         return $0
     }(UILabel())
+    
+    // MARK: - Private Properties
+    
+    private lazy var activityIndicator = ActivityIndicatorView(color: .systemGreen, style: .medium)
     
     // MARK: - Initializers
     
@@ -49,26 +55,35 @@ final class GroceriesListView: UIView {
         setupView()
         addSubviews()
         setupLayout()
+        activityIndicator.startAnimating()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Methods
+    
+    public func stopAnimating() {
+        activityIndicator.stopAnimating()
+    }
+    
     // MARK: - Private Methods
     
     private func setupView() {
         backgroundColor = .white
+        coverDescriptionLabel.layer.cornerRadius = 5
     }
     
     private func addSubviews() {
         addSubview(categoryImageView)
         categoryImageView.addSubview(coverDescriptionLabel)
+        categoryImageView.addSubview(activityIndicator)
         addSubview(groceriesTableView)
     }
     
     private func setupLayout() {
-        coverHeightConstraint = categoryImageView.heightAnchor.constraint(equalToConstant: 200)
+        coverHeightConstraint = categoryImageView.heightAnchor.constraint(equalToConstant: categoryImageViewHeight)
         NSLayoutConstraint.activate([
             categoryImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             categoryImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -82,7 +97,10 @@ final class GroceriesListView: UIView {
             groceriesTableView.topAnchor.constraint(equalTo: categoryImageView.bottomAnchor, constant: 10),
             groceriesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             groceriesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            groceriesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            groceriesTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: categoryImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: categoryImageView.centerYAnchor)
         ])
     }
     

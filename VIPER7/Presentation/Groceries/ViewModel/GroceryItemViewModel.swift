@@ -9,19 +9,15 @@ import Foundation
 
 struct GroceryItemViewModel {
     
-    let id: String
+    let id: Int
     let title: String
     let details: String
     let image: String
-    let price: String
-    let cartValue: CartValueViewModel
     
-    init(using groceryModel: Grocery, cartItem: CartItem) {
-        self.id = groceryModel.skuId
+    init(using groceryModel: Grocery) {
+        self.id = groceryModel.id
         self.title = groceryModel.title
         self.details = groceryModel.details
-        self.image = groceryModel.image
-        self.price = "$ \(groceryModel.price)"
-        self.cartValue = CartValueViewModel(id: cartItem.skuId, stepValue: cartItem.value)
+        self.image = groceryModel.image.name
     }
 }

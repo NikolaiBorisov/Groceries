@@ -5,4 +5,18 @@
 //  Created by NIKOLAI BORISOV on 14.02.2022.
 //
 
-import Foundation
+import UIKit
+
+final class GroceriesListRouter {
+    
+    // MARK: - Public Properties
+    
+    public var viewController: UIViewController
+    
+    // MARK: - Initializers
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+}

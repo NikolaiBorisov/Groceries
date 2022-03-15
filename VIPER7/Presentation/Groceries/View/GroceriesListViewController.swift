@@ -9,8 +9,8 @@ import UIKit
 
 protocol GroceriesListViewProtocol: AnyObject {
     func updateGroceries(groceriesList: [GroceryItemViewModel])
-    func updateCoverImage(data: Data)
-    func updateCoverTitle(detailes: String)
+    func updateCoverImage(imageData: Data)
+    func updateCoverTitle(title: String)
 }
 
 final class GroceriesListViewController: UIViewController {
@@ -58,17 +58,18 @@ final class GroceriesListViewController: UIViewController {
 
 extension GroceriesListViewController: GroceriesListViewProtocol {
     
-    func updateCoverImage(data: Data) {
-        guard let image = UIImage(data: data) else { return }
-        mainView.categoryImageView.image = image
-    }
-    
-    func updateCoverTitle(detailes: String) {
-        mainView.coverDescriptionLabel.text = detailes
+    func updateCoverTitle(title: String) {
+        mainView.coverDescriptionLabel.text = title
     }
     
     func updateGroceries(groceriesList: [GroceryItemViewModel]) {
         dataSource = groceriesList
+    }
+    
+    func updateCoverImage(imageData: Data) {
+        guard let image = UIImage(data: imageData) else { return }
+        mainView.categoryImageView.image = image
+        mainView.stopAnimating()
     }
     
 }
@@ -78,25 +79,21 @@ extension GroceriesListViewController: GroceriesListViewProtocol {
 extension GroceriesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10 // dataSource.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // let viewModel = dataSource[indexPath.row]
+        let viewModel = dataSource[indexPath.row]
         let cell: GroceryItemCell = tableView.dequeueCell(for: indexPath)
-        
-//        cell.configure(using: viewModel) { result in
-//            print("Cart Item added with sku = \(result.skuId) and quantity = \(result.stepValue)")
-//            let skuItem: SkuItem = (skuId: result.skuId, quantity: result.stepValue)
-//            self.presenter?.onAddToCart(skuItem: skuItem)
-//        }
-
-//        self.presenter.onFetchThumbnail(imageName: viewModel.image) { data in
-//            guard let image = UIImage(data: data) else { return }
-//            DispatchQueue.main.async {
-//                cell.updateProductImage(image: image)
-//            }
-//        }
+        cell.configure(using: viewModel)
+        self.presenter?.onThumbnailUpdate(imageName: viewModel.image) { data in
+            DispatchQueue.main.async {
+                guard let data = data,
+                      let image = UIImage(data: data) else { return }
+                cell.updateGroceryIcon(image: image)
+                cell.stopAnimating()
+            }
+        }
         cell.delegate = self
         return cell
     }
@@ -107,23 +104,15 @@ extension GroceriesListViewController: UITableViewDataSource {
 
 extension GroceriesListViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        UITableView.automaticDimension
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > (200 + largeNavigationBarHeight) {
-            mainView.coverHeightConstraint.constant = 0
-        }
-        
-        let offsetDiff = previousOffsetState - scrollView.contentOffset.y
-        print("Current offset: \(scrollView.contentOffset.y)")
-        print("Previous offset: \(previousOffsetState)")
-        print("Offset difference: \(offsetDiff)")
-        previousOffsetState = scrollView.contentOffset.y
-        let newConstraintHeight = mainView.coverHeightConstraint.constant + offsetDiff
-        mainView.coverHeightConstraint.constant = newConstraintHeight
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y > (mainView.categoryImageViewHeight + largeNavigationBarHeight) {
+//            mainView.coverHeightConstraint.constant = 0
+//        }
+//        let offsetDiff = previousOffsetState - scrollView.contentOffset.y
+//        previousOffsetState = scrollView.contentOffset.y
+//        let newConstraintHeight = mainView.coverHeightConstraint.constant + offsetDiff
+//        mainView.coverHeightConstraint.constant = newConstraintHeight
+//    }
     
 }
 

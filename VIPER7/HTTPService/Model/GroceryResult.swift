@@ -7,22 +7,18 @@
 
 import UIKit
 
+// MARK: - GroceryResult
+
 struct GroceryResult: Codable {
     let groceries: [Grocery]
-}
-
-struct Grocery: Codable {
-    let skuId: String
-    let title: String
-    let image: String
-    let details: String
-    let price: Double
     
-    private enum CodingKeys: String, CodingKey {
-        case skuId = "sku-id"
-        case title
-        case image = "product_image"
-        case details
-        case price
+    enum CodingKeys: String, CodingKey {
+        case groceries = "data"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        groceries = try container.decode(Array<Grocery>.self, forKey: .groceries)
+    }
+    
 }

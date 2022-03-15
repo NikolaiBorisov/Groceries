@@ -1,5 +1,5 @@
 //
-//  HomeInteractor.swift
+//  GroceriesInteractor.swift
 //  VIPER7
 //
 //  Created by NIKOLAI BORISOV on 03.02.2022.
@@ -9,7 +9,7 @@ import Foundation
 
 typealias SkuItem = (skuId: String, quantity: Int)
 
-final class HomeInteractor {
+final class GroceriesInteractor {
     
     // MARK: - Public Properties
     
@@ -27,16 +27,14 @@ final class HomeInteractor {
 
 // MARK: - HomeInteractorProtocol
 
-extension HomeInteractor {
+extension GroceriesInteractor {
     
     func getCategories(completion: @escaping CategoriesClosure) {
         service.fetchCategories(completion: completion)
     }
     
-    func getGroceries(completion: (GroceryResult) -> (Void)) {
-        service.fetchGroceries { (result) in
-            completion(result)
-        }
+    func getGroceries(categoryId: Int, completion: @escaping GroceriesClosure) -> (Void) {
+        service.fetchGroceries(categoryId: categoryId, completion: completion)
     }
     
 }

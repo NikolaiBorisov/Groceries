@@ -13,7 +13,7 @@ final class HomeModuleBuilder {
         let view = HomeViewController()
         view.title = "Fresh Groceries"
         let router = HomeRouter(view: view)
-        let homeInteractor = HomeInteractor(service: GroceryService.shared, dataBase: RealmDatabase.shared)
+        let homeInteractor = GroceriesInteractor(service: GroceryService.shared, dataBase: RealmDatabase.shared)
         let cartInteractor = CartInteractor(database: RealmDatabase.shared)
         let imageInteractor = ImageInteractor(service: GroceryService.shared)
         view.presenter = HomePresenter(view: view, router: router, useCase: (

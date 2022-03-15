@@ -27,11 +27,11 @@ extension StubService: GroceriesAPI {
         fatalError("No implementation for this yet")
     }
     
-    func fetchGroceries(completion: GroceriesClosure) {
+    func fetchGroceries(categoryId: Int, completion: @escaping (Category) -> (Void)) {
         if let url = Bundle.main.url(forResource: "products", withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
-                let groceryResult = try JSONDecoder().decode(GroceryResult.self, from: data)
+                let groceryResult = try JSONDecoder().decode(Category.self, from: data)
                 completion(groceryResult)
             } catch {
                 print("Error: \(error)")

@@ -10,7 +10,7 @@ import Alamofire
 
 enum GroceryHTTPRouter {
     case getGroceryCategories
-    case getGroceries(categoryId: String)
+    case getGroceries(categoryId: Int)
     case downloadThumbnail(imageName: String)
     case downloadImage(imageName: String)
 }

@@ -38,6 +38,8 @@ final class AddToBagControlView: UIView {
         $0.backgroundColor = .systemGreen
         $0.setTitle("ADD TO BAG", for: .normal)
         $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 6)
+        $0.titleLabel?.adjustsFontSizeToFitWidth = true
         return $0
     }(UIButton(type: .system))
     
@@ -48,7 +50,7 @@ final class AddToBagControlView: UIView {
     }(UILabel())
     
     private lazy var plusButton: UIButton = {
-        $0.backgroundColor = .systemGreen
+        $0.backgroundColor = .systemBlue
         $0.setTitle("+", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 25)

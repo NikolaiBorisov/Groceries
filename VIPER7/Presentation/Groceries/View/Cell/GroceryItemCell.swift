@@ -21,19 +21,25 @@ final class GroceryItemCell: UITableViewCell {
     
     // MARK: - Private Properties
     
+    private lazy var imageContainerView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UIView())
+    
     private var itemImageView: UIImageView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleToFill
         $0.clipsToBounds = true
         return $0
     }(UIImageView())
     
     // MARK: - titleAndDetailsLabelStackView
     
+    private lazy var activityIndicator = ActivityIndicatorView(color: .systemGreen, style: .medium)
+    
     private let titleLabel: UILabel = {
         $0.textAlignment = .left
         $0.textColor = .black
-        $0.text = "Title"
         return $0
     }(UILabel())
     
@@ -42,50 +48,24 @@ final class GroceryItemCell: UITableViewCell {
         $0.textColor = .black
         $0.textColor = .lightGray
         $0.numberOfLines = 0
-        $0.text = "Title"
         return $0
     }(UILabel())
     
     private lazy var titleAndDetailsLabelStackView: UIStackView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
-        $0.distribution = .fillProportionally
+        $0.distribution = .fill
         $0.spacing = 10
         return $0
     }(UIStackView(arrangedSubviews: [titleLabel, detailsLabel]))
     
-    // MARK: - priceAndAddToBagStackView
-    
-    private let priceLabel: UILabel = {
-        $0.textAlignment = .left
-        $0.textColor = .black
-        $0.text = "Title"
-        return $0
-    }(UILabel())
+    // MARK: - addToBagContainer
     
     private lazy var addToBagContainer: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .white
         return $0
     }(UIView())
-    
-    private lazy var priceAndAddToBagStackView: UIStackView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.axis = .horizontal
-        $0.distribution = .fillEqually
-        $0.spacing = 10
-        return $0
-    }(UIStackView(arrangedSubviews: [priceLabel, addToBagContainer]))
-    
-    // MARK: - mainStackView
-    
-    private lazy var mainStackView: UIStackView = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.axis = .vertical
-        $0.distribution = .fillEqually
-        $0.spacing = 10
-        return $0
-    }(UIStackView(arrangedSubviews: [titleAndDetailsLabelStackView, priceAndAddToBagStackView]))
     
     // MARK: - AddToBagControlView
     
@@ -103,24 +83,35 @@ final class GroceryItemCell: UITableViewCell {
         setupLayout()
         setupDelegate()
         setupAddToBagLayout()
+        activityIndicator.startAnimating()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Life Cycle
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        itemImageView.layer.cornerRadius = itemImageView.frame.height / 2
+    }
+    
     // MARK: - Public Methods
     
-    public func configure(
-        using viewModel: GroceryItemViewModel,
-        addToCartClosure: @escaping BagClosure
-    ) {
-        titleLabel.text = viewModel.title
+    public func configure(using viewModel: GroceryItemViewModel) {
+        titleLabel.text = viewModel.title.capitalized
         detailsLabel.text = viewModel.details
-        priceLabel.text = viewModel.price
-        itemImageView.image = UIImage(named: viewModel.image)
-        addToBagControl.configure(using: viewModel.cartValue, bagClosure: addToCartClosure)
         selectionStyle = .none
+    }
+    
+    public func updateGroceryIcon(image: UIImage) {
+        itemImageView.image = image
+    }
+    
+    public func stopAnimating() {
+        activityIndicator.stopAnimating()
     }
     
     // MARK: - Private Methods
@@ -135,23 +126,32 @@ final class GroceryItemCell: UITableViewCell {
     }
     
     private func addSubviews() {
-        contentView.addSubview(itemImageView)
+        contentView.addSubview(imageContainerView)
         contentView.addSubview(titleAndDetailsLabelStackView)
-        contentView.addSubview(mainStackView)
-        addToBagContainer.addSubview(addToBagControl)
+        imageContainerView.addSubview(itemImageView)
+        itemImageView.addSubview(activityIndicator)
+        // addToBagContainer.addSubview(addToBagControl)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            itemImageView.widthAnchor.constraint(equalToConstant: 120),
-            itemImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            itemImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            imageContainerView.widthAnchor.constraint(equalToConstant: 100),
+            imageContainerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            imageContainerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            imageContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
-            mainStackView.leadingAnchor.constraint(equalTo: itemImageView.trailingAnchor, constant: 10),
-            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+            itemImageView.widthAnchor.constraint(equalToConstant: 50),
+            itemImageView.heightAnchor.constraint(equalToConstant: 50),
+            itemImageView.centerXAnchor.constraint(equalTo: imageContainerView.centerXAnchor),
+            itemImageView.centerYAnchor.constraint(equalTo: imageContainerView.centerYAnchor),
+            
+            titleAndDetailsLabelStackView.leadingAnchor.constraint(equalTo: imageContainerView.trailingAnchor, constant: 10),
+            titleAndDetailsLabelStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            titleAndDetailsLabelStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            titleAndDetailsLabelStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: itemImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: itemImageView.centerYAnchor)
         ])
     }
     
