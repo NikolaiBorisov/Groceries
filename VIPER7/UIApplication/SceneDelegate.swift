@@ -22,9 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = createInitialVC()
-        window?.makeKeyAndVisible()
+        window = WindowBuilder.build(scene: windowScene)
         
         getPathToRealmFile()
     }
@@ -37,14 +35,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("Path to Realm objects: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
     }
     
-    private func createInitialVC() -> UITabBarController {
-        let submodules = (
-            home: HomeModuleBuilder.build(using: NavigationBuilder.build),
-            cart: CartModuleBuilder.build(using: NavigationBuilder.build),
-            profile: ProfileModuleBuilder.build(using: NavigationBuilder.build)
-        )
-        let tabBarController = TabBarModuleBuilder.build(using: submodules)
-        return tabBarController
-    }
+//    private func createInitialVC() -> UITabBarController {
+//        let submodules = (
+//            home: HomeModuleBuilder.build(using: NavigationBuilder.build),
+//            cart: CartModuleBuilder.build(using: NavigationBuilder.build),
+//            profile: ProfileModuleBuilder.build(using: NavigationBuilder.build)
+//        )
+//        let tabBarController = TabBarModuleBuilder.build(using: submodules)
+//        return tabBarController
+//    }
     
 }

@@ -70,6 +70,36 @@
 		FAE8D35F27B3B3A700FCB1C2 /* GroceriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8D35E27B3B3A700FCB1C2 /* GroceriesAPI.swift */; };
 		FAE8D36127B3B46200FCB1C2 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8D36027B3B46200FCB1C2 /* Categories.swift */; };
 		FAE8D36327B3B6E900FCB1C2 /* GroceryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8D36227B3B6E900FCB1C2 /* GroceryService.swift */; };
+		FAF1112127E2FCFE006F4638 /* AccountTextControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112027E2FCFE006F4638 /* AccountTextControl.swift */; };
+		FAF1112527E3041E006F4638 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112427E3041E006F4638 /* Rule.swift */; };
+		FAF1112727E30477006F4638 /* RequiredRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112627E30477006F4638 /* RequiredRule.swift */; };
+		FAF1112927E304E3006F4638 /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112827E304E3006F4638 /* EmailRule.swift */; };
+		FAF1112B27E30682006F4638 /* MinimumLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112A27E30682006F4638 /* MinimumLengthRule.swift */; };
+		FAF1112D27E3074B006F4638 /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112C27E3074B006F4638 /* PasswordRule.swift */; };
+		FAF1112F27E30892006F4638 /* FieldValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1112E27E30892006F4638 /* FieldValidatable.swift */; };
+		FAF1113427E319A5006F4638 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1113327E319A5006F4638 /* Window.swift */; };
+		FAF1113727E31A1E006F4638 /* WindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1113627E31A1E006F4638 /* WindowPresenter.swift */; };
+		FAF1113A27E31A4F006F4638 /* WindowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1113927E31A4F006F4638 /* WindowRouter.swift */; };
+		FAF1113D27E31B7D006F4638 /* WindowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1113C27E31B7D006F4638 /* WindowBuilder.swift */; };
+		FAF1114227E31E1F006F4638 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1114127E31E1F006F4638 /* AccountPresenter.swift */; };
+		FAF1114527E31E4D006F4638 /* AccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1114427E31E4D006F4638 /* AccountRouter.swift */; };
+		FAF1114727E31E62006F4638 /* AccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1114627E31E62006F4638 /* AccountBuilder.swift */; };
+		FAF1114927E320B2006F4638 /* GroceryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1114827E320B2006F4638 /* GroceryScreen.swift */; };
+		FAF1114F27E3376D006F4638 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1114E27E3376D006F4638 /* LoginPresenter.swift */; };
+		FAF1115327E33808006F4638 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1115227E33808006F4638 /* LoginRouter.swift */; };
+		FAF1115527E3386B006F4638 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1115427E3386B006F4638 /* LoginBuilder.swift */; };
+		FAF1115A27E33A66006F4638 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1115927E33A66006F4638 /* SignUpPresenter.swift */; };
+		FAF1115C27E33AFB006F4638 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1115B27E33AFB006F4638 /* SignUpRouter.swift */; };
+		FAF1115E27E33B59006F4638 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1115D27E33B59006F4638 /* SignUpBuilder.swift */; };
+		FAF3B0A227E219A200A71A38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0A127E219A200A71A38 /* LoginViewController.swift */; };
+		FAF3B0A427E219C500A71A38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0A327E219C500A71A38 /* SignUpViewController.swift */; };
+		FAF3B0A727E219FC00A71A38 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0A627E219FC00A71A38 /* LoginView.swift */; };
+		FAF3B0AB27E21F3700A71A38 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0AA27E21F3700A71A38 /* AccountViewController.swift */; };
+		FAF3B0AE27E21F6000A71A38 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0AD27E21F6000A71A38 /* SignUpView.swift */; };
+		FAF3B0B127E2211800A71A38 /* UITextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0B027E2211800A71A38 /* UITextFieldFactory.swift */; };
+		FAF3B0B427E2334200A71A38 /* UILabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0B327E2334200A71A38 /* UILabelFactory.swift */; };
+		FAF3B0B627E2351700A71A38 /* UIButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0B527E2351700A71A38 /* UIButtonFactory.swift */; };
+		FAF3B0B827E236FB00A71A38 /* UIStackViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3B0B727E236FB00A71A38 /* UIStackViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +193,36 @@
 		FAE8D35E27B3B3A700FCB1C2 /* GroceriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesAPI.swift; sourceTree = "<group>"; };
 		FAE8D36027B3B46200FCB1C2 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		FAE8D36227B3B6E900FCB1C2 /* GroceryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryService.swift; sourceTree = "<group>"; };
+		FAF1112027E2FCFE006F4638 /* AccountTextControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTextControl.swift; sourceTree = "<group>"; };
+		FAF1112427E3041E006F4638 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		FAF1112627E30477006F4638 /* RequiredRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredRule.swift; sourceTree = "<group>"; };
+		FAF1112827E304E3006F4638 /* EmailRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
+		FAF1112A27E30682006F4638 /* MinimumLengthRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimumLengthRule.swift; sourceTree = "<group>"; };
+		FAF1112C27E3074B006F4638 /* PasswordRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
+		FAF1112E27E30892006F4638 /* FieldValidatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidatable.swift; sourceTree = "<group>"; };
+		FAF1113327E319A5006F4638 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		FAF1113627E31A1E006F4638 /* WindowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPresenter.swift; sourceTree = "<group>"; };
+		FAF1113927E31A4F006F4638 /* WindowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRouter.swift; sourceTree = "<group>"; };
+		FAF1113C27E31B7D006F4638 /* WindowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowBuilder.swift; sourceTree = "<group>"; };
+		FAF1114127E31E1F006F4638 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		FAF1114427E31E4D006F4638 /* AccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRouter.swift; sourceTree = "<group>"; };
+		FAF1114627E31E62006F4638 /* AccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBuilder.swift; sourceTree = "<group>"; };
+		FAF1114827E320B2006F4638 /* GroceryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryScreen.swift; sourceTree = "<group>"; };
+		FAF1114E27E3376D006F4638 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		FAF1115227E33808006F4638 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FAF1115427E3386B006F4638 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		FAF1115927E33A66006F4638 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		FAF1115B27E33AFB006F4638 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		FAF1115D27E33B59006F4638 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
+		FAF3B0A127E219A200A71A38 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAF3B0A327E219C500A71A38 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FAF3B0A627E219FC00A71A38 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FAF3B0AA27E21F3700A71A38 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		FAF3B0AD27E21F6000A71A38 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		FAF3B0B027E2211800A71A38 /* UITextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldFactory.swift; sourceTree = "<group>"; };
+		FAF3B0B327E2334200A71A38 /* UILabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelFactory.swift; sourceTree = "<group>"; };
+		FAF3B0B527E2351700A71A38 /* UIButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonFactory.swift; sourceTree = "<group>"; };
+		FAF3B0B727E236FB00A71A38 /* UIStackViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +567,10 @@
 			isa = PBXGroup;
 			children = (
 				FA9A40EC27ABD3170019334C /* LaunchScreen.storyboard */,
+				FAF1113227E3198B006F4638 /* Window */,
+				FAF3B0A827E21F2000A71A38 /* Account */,
+				FAF3B09D27E2195300A71A38 /* Login */,
+				FAF3B09F27E2196500A71A38 /* SignUp */,
 				FA04E17927B11FE200C3C97B /* TabBar */,
 				FA04E15F27B0E8CE00C3C97B /* Navigation */,
 				FA9A416327AD5E270019334C /* Home */,
@@ -520,6 +584,9 @@
 		FA9A411327ABD3400019334C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				FAF1113127E30C32006F4638 /* Views */,
+				FAF1113027E30BF3006F4638 /* Factory */,
+				FAF1112227E303ED006F4638 /* FieldValidator */,
 				FAD7B32127B22FF9002B7519 /* Constants */,
 				FA9A415C27AD37620019334C /* Extension */,
 				FA9A414B27AD07320019334C /* JSON */,
@@ -604,6 +671,7 @@
 				FAE8D36027B3B46200FCB1C2 /* Categories.swift */,
 				FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */,
 				FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */,
+				FAF1114827E320B2006F4638 /* GroceryScreen.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,6 +754,220 @@
 				FA88F2AC27E0C31400AEEFE6 /* ImageHTTPRouter.swift */,
 			);
 			path = AFService;
+			sourceTree = "<group>";
+		};
+		FAF1111F27E2FCD4006F4638 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0AA27E21F3700A71A38 /* AccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF1112227E303ED006F4638 /* FieldValidator */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1112327E303FF006F4638 /* Rules */,
+				FAF1112E27E30892006F4638 /* FieldValidatable.swift */,
+			);
+			path = FieldValidator;
+			sourceTree = "<group>";
+		};
+		FAF1112327E303FF006F4638 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1112427E3041E006F4638 /* Rule.swift */,
+				FAF1112627E30477006F4638 /* RequiredRule.swift */,
+				FAF1112827E304E3006F4638 /* EmailRule.swift */,
+				FAF1112A27E30682006F4638 /* MinimumLengthRule.swift */,
+				FAF1112C27E3074B006F4638 /* PasswordRule.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		FAF1113027E30BF3006F4638 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0B327E2334200A71A38 /* UILabelFactory.swift */,
+				FAF3B0B527E2351700A71A38 /* UIButtonFactory.swift */,
+				FAF3B0B727E236FB00A71A38 /* UIStackViewFactory.swift */,
+				FAF3B0B027E2211800A71A38 /* UITextFieldFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		FAF1113127E30C32006F4638 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1112027E2FCFE006F4638 /* AccountTextControl.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAF1113227E3198B006F4638 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1113E27E31CB8006F4638 /* View */,
+				FAF1113527E31A0D006F4638 /* Presenter */,
+				FAF1113827E31A3D006F4638 /* Router */,
+				FAF1113B27E31B60006F4638 /* Assembly */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		FAF1113527E31A0D006F4638 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1113627E31A1E006F4638 /* WindowPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAF1113827E31A3D006F4638 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1113927E31A4F006F4638 /* WindowRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAF1113B27E31B60006F4638 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1113C27E31B7D006F4638 /* WindowBuilder.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		FAF1113E27E31CB8006F4638 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1113327E319A5006F4638 /* Window.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF1113F27E31DDF006F4638 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1114627E31E62006F4638 /* AccountBuilder.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		FAF1114027E31E03006F4638 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1114127E31E1F006F4638 /* AccountPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAF1114327E31E3C006F4638 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1114427E31E4D006F4638 /* AccountRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAF1114A27E33709006F4638 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1114E27E3376D006F4638 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAF1115027E33778006F4638 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1115227E33808006F4638 /* LoginRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAF1115127E337B4006F4638 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1115427E3386B006F4638 /* LoginBuilder.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		FAF1115627E33A27006F4638 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1115D27E33B59006F4638 /* SignUpBuilder.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		FAF1115727E33A34006F4638 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1115927E33A66006F4638 /* SignUpPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAF1115827E33A4A006F4638 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1115B27E33AFB006F4638 /* SignUpRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAF3B09D27E2195300A71A38 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0A527E219EF00A71A38 /* View */,
+				FAF1114A27E33709006F4638 /* Presenter */,
+				FAF1115027E33778006F4638 /* Router */,
+				FAF1115127E337B4006F4638 /* Assembly */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FAF3B09F27E2196500A71A38 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0AC27E21F4E00A71A38 /* View */,
+				FAF1115727E33A34006F4638 /* Presenter */,
+				FAF1115827E33A4A006F4638 /* Router */,
+				FAF1115627E33A27006F4638 /* Assembly */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		FAF3B0A527E219EF00A71A38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0A127E219A200A71A38 /* LoginViewController.swift */,
+				FAF3B0A627E219FC00A71A38 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF3B0A827E21F2000A71A38 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				FAF1111F27E2FCD4006F4638 /* View */,
+				FAF1114027E31E03006F4638 /* Presenter */,
+				FAF1114327E31E3C006F4638 /* Router */,
+				FAF1113F27E31DDF006F4638 /* Assembly */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		FAF3B0AC27E21F4E00A71A38 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF3B0A327E219C500A71A38 /* SignUpViewController.swift */,
+				FAF3B0AD27E21F6000A71A38 /* SignUpView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -928,59 +1210,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA13CB0127BA6EAE00555523 /* GroceriesListPresenter.swift in Sources */,
+				FAF1114227E31E1F006F4638 /* AccountPresenter.swift in Sources */,
 				FA04E16427B0F18800C3C97B /* RealmDatabase.swift in Sources */,
 				FA9A40E927ABD3130019334C /* VIPER7.xcdatamodeld in Sources */,
 				FA04E16A27B0F70C00C3C97B /* CartItem.swift in Sources */,
+				FAF1112F27E30892006F4638 /* FieldValidatable.swift in Sources */,
+				FAF1115527E3386B006F4638 /* LoginBuilder.swift in Sources */,
 				FA9A411C27ABD4EA0019334C /* HomeRouter.swift in Sources */,
+				FAF1115A27E33A66006F4638 /* SignUpPresenter.swift in Sources */,
 				FA9A416027AD37A90019334C /* UITableView+Extension.swift in Sources */,
+				FAF1112127E2FCFE006F4638 /* AccountTextControl.swift in Sources */,
 				FA9A40E327ABD3130019334C /* HomeViewController.swift in Sources */,
+				FAF1113D27E31B7D006F4638 /* WindowBuilder.swift in Sources */,
 				FA9A40DF27ABD3130019334C /* AppDelegate.swift in Sources */,
 				FAE8D35927B3AAE300FCB1C2 /* HTTPService.swift in Sources */,
 				FA575D3C27B6822B00CD15EE /* CategoriesHomeView.swift in Sources */,
 				FA9A412027ABD5C50019334C /* HomeModel.swift in Sources */,
+				FAF1114927E320B2006F4638 /* GroceryScreen.swift in Sources */,
 				FA13CAFD27BA6E5F00555523 /* GroceriesListViewController.swift in Sources */,
 				FA575D3E27B6896B00CD15EE /* UILabelInset.swift in Sources */,
 				FAE8D36327B3B6E900FCB1C2 /* GroceryService.swift in Sources */,
+				FAF3B0B127E2211800A71A38 /* UITextFieldFactory.swift in Sources */,
 				FA13CB0727BA700E00555523 /* GroceriesListView.swift in Sources */,
 				FAE8D35D27B3AFFB00FCB1C2 /* GroceryHTTPRouter.swift in Sources */,
 				FA04E17127B11D3900C3C97B /* CartModuleBuilder.swift in Sources */,
 				FA9A413A27ABECE90019334C /* AddToBagControlView.swift in Sources */,
 				FA13CB0527BA6ED900555523 /* GroceriesListModuleBuilder.swift in Sources */,
 				FA575D4227B68F2700CD15EE /* ImagesAPI.swift in Sources */,
+				FAF3B0AB27E21F3700A71A38 /* AccountViewController.swift in Sources */,
+				FAF3B0AE27E21F6000A71A38 /* SignUpView.swift in Sources */,
 				FA13CAF427BA672800555523 /* ActivityIndicatorView.swift in Sources */,
+				FAF1114F27E3376D006F4638 /* LoginPresenter.swift in Sources */,
 				FA575D3827B67A8900CD15EE /* CategoryView.swift in Sources */,
 				FA88F2A827E09BBF00AEEFE6 /* Grocery.swift in Sources */,
 				FA04E16127B0E90300C3C97B /* NavigationBuilder.swift in Sources */,
 				FA88F2A627E084D000AEEFE6 /* SingleCategoryResult.swift in Sources */,
+				FAF1114527E31E4D006F4638 /* AccountRouter.swift in Sources */,
+				FAF1112927E304E3006F4638 /* EmailRule.swift in Sources */,
 				FA9A415127AD07930019334C /* StubService.swift in Sources */,
 				FAD7B32327B2300A002B7519 /* AppImage.swift in Sources */,
+				FAF1115327E33808006F4638 /* LoginRouter.swift in Sources */,
 				FA04E17827B11EB100C3C97B /* ProfileModuleBuilder.swift in Sources */,
+				FAF3B0B427E2334200A71A38 /* UILabelFactory.swift in Sources */,
 				FA88F2AD27E0C31400AEEFE6 /* ImageHTTPRouter.swift in Sources */,
 				FAE8D35B27B3AF6A00FCB1C2 /* GroceryHTTPService.swift in Sources */,
+				FAF1112B27E30682006F4638 /* MinimumLengthRule.swift in Sources */,
 				FA9A414927AD04350019334C /* GroceryItemCell.swift in Sources */,
+				FAF1112727E30477006F4638 /* RequiredRule.swift in Sources */,
+				FAF1113727E31A1E006F4638 /* WindowPresenter.swift in Sources */,
+				FAF1112527E3041E006F4638 /* Rule.swift in Sources */,
 				FA9A412327ABD6CE0019334C /* HomeModuleBuilder.swift in Sources */,
 				FA88F2AB27E0C03500AEEFE6 /* ImageHTTPService.swift in Sources */,
 				FA04E16D27B11CB900C3C97B /* CartViewController.swift in Sources */,
 				FAE8D36127B3B46200FCB1C2 /* Categories.swift in Sources */,
 				FA04E17C27B1202B00C3C97B /* GroceryTabBarController.swift in Sources */,
+				FAF3B0B627E2351700A71A38 /* UIButtonFactory.swift in Sources */,
 				FA9A411A27ABD4940019334C /* HomePresenter.swift in Sources */,
 				FAE8D35727B3AACC00FCB1C2 /* HTTPRouter.swift in Sources */,
 				FA9A415E27AD37760019334C /* UIView+Extension.swift in Sources */,
 				FA04E18A27B131AC00C3C97B /* TabBarPresenter.swift in Sources */,
 				FA575D3A27B680D600CD15EE /* CategoryItemViewModel.swift in Sources */,
+				FAF1113427E319A5006F4638 /* Window.swift in Sources */,
 				FA9A415827AD0FFC0019334C /* GroceryItemViewModel.swift in Sources */,
 				FA9A40E127ABD3130019334C /* SceneDelegate.swift in Sources */,
+				FAF3B0A227E219A200A71A38 /* LoginViewController.swift in Sources */,
+				FAF1112D27E3074B006F4638 /* PasswordRule.swift in Sources */,
 				FA575D4027B68ECE00CD15EE /* ImageInteractor.swift in Sources */,
+				FAF3B0B827E236FB00A71A38 /* UIStackViewFactory.swift in Sources */,
 				FA9A415427AD092A0019334C /* GroceryResult.swift in Sources */,
 				FA04E16727B0F61000C3C97B /* RealmCartItem.swift in Sources */,
 				FA04E17527B11E6800C3C97B /* ProfileViewController.swift in Sources */,
 				FA04E18427B1219A00C3C97B /* TabBarRouter.swift in Sources */,
+				FAF1114727E31E62006F4638 /* AccountBuilder.swift in Sources */,
 				FAE8D35F27B3B3A700FCB1C2 /* GroceriesAPI.swift in Sources */,
+				FAF3B0A427E219C500A71A38 /* SignUpViewController.swift in Sources */,
+				FAF1113A27E31A4F006F4638 /* WindowRouter.swift in Sources */,
 				FA04E18727B12C4100C3C97B /* CartInteractor.swift in Sources */,
 				FA04E18127B1213200C3C97B /* TabBarModuleBuilder.swift in Sources */,
 				FA9A411E27ABD54D0019334C /* GroceriesInteractor.swift in Sources */,
+				FAF3B0A727E219FC00A71A38 /* LoginView.swift in Sources */,
 				FA13CB0327BA6EC700555523 /* GroceriesListRouter.swift in Sources */,
 				FA9A414227AC00670019334C /* CartValueViewModel.swift in Sources */,
+				FAF1115C27E33AFB006F4638 /* SignUpRouter.swift in Sources */,
+				FAF1115E27E33B59006F4638 /* SignUpBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
