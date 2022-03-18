@@ -10,9 +10,19 @@ import Foundation
 protocol SignUpPresenterProtocol: AnyObject {
     func onSwitchLogin()
     func validate(using fields: [FieldValidatable], completion: (Bool) -> ())
+    func signUp(userName: String, email: String, password: String)
 }
 
 final class SignUpPresenter {
+    
+    typealias UseCases = (
+        signUp: (
+            _ userName: String,
+            _ email: String,
+            _ password: String,
+            _ completion: @escaping (AuthResult<String>) -> Void) -> Void,
+        ()
+    )
     
     // MARK: - Public Properties
     
@@ -21,11 +31,13 @@ final class SignUpPresenter {
     // MARK: - Private Properties
     
     private var router: SignUpRouterProtocol
+    private let useCases: UseCases
     
     // MARK: - Initializers
     
-    init(router: SignUpRouterProtocol) {
+    init(router: SignUpRouterProtocol, useCases: UseCases) {
         self.router = router
+        self.useCases = useCases
     }
     
     
@@ -34,6 +46,23 @@ final class SignUpPresenter {
 // MARK: - SignUpPresenterProtocol
 
 extension SignUpPresenter: SignUpPresenterProtocol {
+    
+    func signUp(userName: String, email: String, password: String) {
+        useCases.signUp(userName, email, password) { result in
+            switch result {
+            case .success(let message):
+                self.view.updateStatus(using: AuthStatusViewModel(title: message, color: .success))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.router.routeToLogin()
+                }
+                break
+            case .failure(let error):
+                self.view.updateStatus(using: AuthStatusViewModel(title: error, color: .failure))
+                break
+            }
+            self.view.updateProgress(isCompleted: true)
+        }
+    }
     
     func onSwitchLogin() {
         router.routeToLogin()
@@ -51,8 +80,9 @@ extension SignUpPresenter: SignUpPresenterProtocol {
         }
         view.updateInvalidFields()
         if isValid {
-            //
+            view.updateProgress(isCompleted: false)
         }
+        completion(isValid)
     }
     
 }

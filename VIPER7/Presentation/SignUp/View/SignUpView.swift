@@ -15,7 +15,15 @@ final class SignUpView: UIView {
     
     public weak var delegate: SignUpViewDelegate?
     
-    public lazy var titleLabel = UILabelFactory.generate(with: .greenGrocery, fontSize: 30)
+    // MARK: - Public Properties
+    
+    public var nameControlText: String { nameControl.validationText }
+    public var emailControlText: String { emailControl.validationText }
+    public var passwordControlText: String { passwordControl.validationText }
+    
+    // MARK: - Private Properties
+    
+    private lazy var titleLabel = UILabelFactory.generate(with: .greenGrocery, fontSize: 30)
     
     private lazy var nameControl = AccountTextControl()
     private lazy var emailControl = AccountTextControl()
@@ -25,7 +33,7 @@ final class SignUpView: UIView {
         with: .signUp, fontSize: 25, backgroundColor: .systemGreen, titleColor: .white
     )
     
-    public lazy var haveAccountLabel = UILabelFactory.generate(with: .haveAccount, fontSize: 25)
+    private lazy var haveAccountLabel = UILabelFactory.generate(with: .haveAccount, fontSize: 25)
     
     private lazy var loginButton = UIButtonFactory.generate(
         with: .loginNow, fontSize: 25, backgroundColor: .white, titleColor: .systemGreen
@@ -81,6 +89,25 @@ final class SignUpView: UIView {
         nameControl.setErrorMessage()
         emailControl.setErrorMessage()
         passwordControl.setErrorMessage()
+    }
+    
+    public func setSignUpButtonTitle(isCompleted: Bool) {
+        signUpButton.isEnabled = isCompleted
+        if !isCompleted {
+            signUpButton.setTitle("Signing Up...", for: .normal)
+            return
+        }
+        if isCompleted {
+            nameControl.inputTextField.text = ""
+            emailControl.inputTextField.text = ""
+            passwordControl.inputTextField.text = ""
+        }
+        signUpButton.setTitle("Sign Up", for: .normal)
+    }
+    
+    public func setStatusLabel(using viewModel: AuthStatusViewModel) {
+        statusLabel.text = viewModel.title
+        statusLabel.textColor = UIColor(hex: viewModel.color.rawValue)
     }
     
     // MARK: - Private Methods

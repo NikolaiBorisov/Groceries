@@ -35,6 +35,17 @@
 		FA575D3E27B6896B00CD15EE /* UILabelInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA575D3D27B6896B00CD15EE /* UILabelInset.swift */; };
 		FA575D4027B68ECE00CD15EE /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA575D3F27B68ECE00CD15EE /* ImageInteractor.swift */; };
 		FA575D4227B68F2700CD15EE /* ImagesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA575D4127B68F2700CD15EE /* ImagesAPI.swift */; };
+		FA7307E427E445B800ECBBAF /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307E327E445B800ECBBAF /* UITextField+Extension.swift */; };
+		FA7307E727E4492800ECBBAF /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307E627E4492800ECBBAF /* AuthInteractor.swift */; };
+		FA7307EA27E44ACE00ECBBAF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307E927E44ACE00ECBBAF /* AuthService.swift */; };
+		FA7307EC27E44AF400ECBBAF /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307EB27E44AF400ECBBAF /* AuthAPI.swift */; };
+		FA7307EE27E44C4900ECBBAF /* AuthHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307ED27E44C4900ECBBAF /* AuthHTTPService.swift */; };
+		FA7307F227E44D2100ECBBAF /* AuthHTTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307F127E44D2100ECBBAF /* AuthHTTPRouter.swift */; };
+		FA7307F427E44F8800ECBBAF /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307F327E44F8800ECBBAF /* AuthModel.swift */; };
+		FA7307F627E45FAC00ECBBAF /* SignUpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307F527E45FAC00ECBBAF /* SignUpError.swift */; };
+		FA7307F927E46B9000ECBBAF /* AuthStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307F827E46B9000ECBBAF /* AuthStatusViewModel.swift */; };
+		FA7307FC27E46C2900ECBBAF /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307FB27E46C2900ECBBAF /* ColorConstant.swift */; };
+		FA7307FE27E46E8800ECBBAF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307FD27E46E8800ECBBAF /* UIColor+Extension.swift */; };
 		FA88F2A627E084D000AEEFE6 /* SingleCategoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */; };
 		FA88F2A827E09BBF00AEEFE6 /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */; };
 		FA88F2AB27E0C03500AEEFE6 /* ImageHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */; };
@@ -154,6 +165,17 @@
 		FA575D3D27B6896B00CD15EE /* UILabelInset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelInset.swift; sourceTree = "<group>"; };
 		FA575D3F27B68ECE00CD15EE /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
 		FA575D4127B68F2700CD15EE /* ImagesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAPI.swift; sourceTree = "<group>"; };
+		FA7307E327E445B800ECBBAF /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		FA7307E627E4492800ECBBAF /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		FA7307E927E44ACE00ECBBAF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FA7307EB27E44AF400ECBBAF /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		FA7307ED27E44C4900ECBBAF /* AuthHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHTTPService.swift; sourceTree = "<group>"; };
+		FA7307F127E44D2100ECBBAF /* AuthHTTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHTTPRouter.swift; sourceTree = "<group>"; };
+		FA7307F327E44F8800ECBBAF /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		FA7307F527E45FAC00ECBBAF /* SignUpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpError.swift; sourceTree = "<group>"; };
+		FA7307F827E46B9000ECBBAF /* AuthStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusViewModel.swift; sourceTree = "<group>"; };
+		FA7307FB27E46C2900ECBBAF /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		FA7307FD27E46E8800ECBBAF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryResult.swift; sourceTree = "<group>"; };
 		FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
 		FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHTTPService.swift; sourceTree = "<group>"; };
@@ -484,6 +506,70 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FA7307E527E4490E00ECBBAF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FA7307E627E4492800ECBBAF /* AuthInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FA7307E827E44AB900ECBBAF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8D35E27B3B3A700FCB1C2 /* GroceriesAPI.swift */,
+				FA575D4127B68F2700CD15EE /* ImagesAPI.swift */,
+				FA7307EB27E44AF400ECBBAF /* AuthAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FA7307EF27E44CA400ECBBAF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8D35627B3AACC00FCB1C2 /* HTTPRouter.swift */,
+				FAE8D35C27B3AFFB00FCB1C2 /* GroceryHTTPRouter.swift */,
+				FA88F2AC27E0C31400AEEFE6 /* ImageHTTPRouter.swift */,
+				FA7307F127E44D2100ECBBAF /* AuthHTTPRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FA7307F027E44CB400ECBBAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8D35827B3AAE300FCB1C2 /* HTTPService.swift */,
+				FAE8D35A27B3AF6A00FCB1C2 /* GroceryHTTPService.swift */,
+				FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */,
+				FA7307ED27E44C4900ECBBAF /* AuthHTTPService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA7307F727E46B7B00ECBBAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA7307F827E46B9000ECBBAF /* AuthStatusViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA7307FA27E46C1900ECBBAF /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				FA7307FB27E46C2900ECBBAF /* ColorConstant.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		FA7307FF27E4716200ECBBAF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7B32227B2300A002B7519 /* AppImage.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FA88F2A027DF697E00AEEFE6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,8 +742,7 @@
 		FA9A414F27AD07810019334C /* HTTPService */ = {
 			isa = PBXGroup;
 			children = (
-				FAE8D35E27B3B3A700FCB1C2 /* GroceriesAPI.swift */,
-				FA575D4127B68F2700CD15EE /* ImagesAPI.swift */,
+				FA7307E827E44AB900ECBBAF /* API */,
 				FA9A415527AD09400019334C /* Services */,
 				FA9A415227AD09130019334C /* Model */,
 			);
@@ -672,6 +757,8 @@
 				FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */,
 				FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */,
 				FAF1114827E320B2006F4638 /* GroceryScreen.swift */,
+				FA7307F327E44F8800ECBBAF /* AuthModel.swift */,
+				FA7307F527E45FAC00ECBBAF /* SignUpError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +768,7 @@
 			children = (
 				FAE8D36227B3B6E900FCB1C2 /* GroceryService.swift */,
 				FA9A415027AD07930019334C /* StubService.swift */,
+				FA7307E927E44ACE00ECBBAF /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -708,6 +796,8 @@
 				FA9A415D27AD37760019334C /* UIView+Extension.swift */,
 				FA9A415F27AD37A90019334C /* UITableView+Extension.swift */,
 				FA575D3D27B6896B00CD15EE /* UILabelInset.swift */,
+				FA7307E327E445B800ECBBAF /* UITextField+Extension.swift */,
+				FA7307FD27E46E8800ECBBAF /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -738,7 +828,8 @@
 		FAD7B32127B22FF9002B7519 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				FAD7B32227B2300A002B7519 /* AppImage.swift */,
+				FA7307FA27E46C1900ECBBAF /* Colors */,
+				FA7307FF27E4716200ECBBAF /* Images */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -746,12 +837,8 @@
 		FAE8D35527B3AAAC00FCB1C2 /* AFService */ = {
 			isa = PBXGroup;
 			children = (
-				FAE8D35827B3AAE300FCB1C2 /* HTTPService.swift */,
-				FAE8D35627B3AACC00FCB1C2 /* HTTPRouter.swift */,
-				FAE8D35A27B3AF6A00FCB1C2 /* GroceryHTTPService.swift */,
-				FAE8D35C27B3AFFB00FCB1C2 /* GroceryHTTPRouter.swift */,
-				FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */,
-				FA88F2AC27E0C31400AEEFE6 /* ImageHTTPRouter.swift */,
+				FA7307EF27E44CA400ECBBAF /* Router */,
+				FA7307F027E44CB400ECBBAF /* Service */,
 			);
 			path = AFService;
 			sourceTree = "<group>";
@@ -926,6 +1013,7 @@
 				FAF1114A27E33709006F4638 /* Presenter */,
 				FAF1115027E33778006F4638 /* Router */,
 				FAF1115127E337B4006F4638 /* Assembly */,
+				FA7307F727E46B7B00ECBBAF /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -934,6 +1022,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF3B0AC27E21F4E00A71A38 /* View */,
+				FA7307E527E4490E00ECBBAF /* Interactor */,
 				FAF1115727E33A34006F4638 /* Presenter */,
 				FAF1115827E33A4A006F4638 /* Router */,
 				FAF1115627E33A27006F4638 /* Assembly */,
@@ -1218,6 +1307,7 @@
 				FAF1115527E3386B006F4638 /* LoginBuilder.swift in Sources */,
 				FA9A411C27ABD4EA0019334C /* HomeRouter.swift in Sources */,
 				FAF1115A27E33A66006F4638 /* SignUpPresenter.swift in Sources */,
+				FA7307FC27E46C2900ECBBAF /* ColorConstant.swift in Sources */,
 				FA9A416027AD37A90019334C /* UITableView+Extension.swift in Sources */,
 				FAF1112127E2FCFE006F4638 /* AccountTextControl.swift in Sources */,
 				FA9A40E327ABD3130019334C /* HomeViewController.swift in Sources */,
@@ -1225,6 +1315,8 @@
 				FA9A40DF27ABD3130019334C /* AppDelegate.swift in Sources */,
 				FAE8D35927B3AAE300FCB1C2 /* HTTPService.swift in Sources */,
 				FA575D3C27B6822B00CD15EE /* CategoriesHomeView.swift in Sources */,
+				FA7307F627E45FAC00ECBBAF /* SignUpError.swift in Sources */,
+				FA7307F427E44F8800ECBBAF /* AuthModel.swift in Sources */,
 				FA9A412027ABD5C50019334C /* HomeModel.swift in Sources */,
 				FAF1114927E320B2006F4638 /* GroceryScreen.swift in Sources */,
 				FA13CAFD27BA6E5F00555523 /* GroceriesListViewController.swift in Sources */,
@@ -1245,6 +1337,8 @@
 				FA88F2A827E09BBF00AEEFE6 /* Grocery.swift in Sources */,
 				FA04E16127B0E90300C3C97B /* NavigationBuilder.swift in Sources */,
 				FA88F2A627E084D000AEEFE6 /* SingleCategoryResult.swift in Sources */,
+				FA7307FE27E46E8800ECBBAF /* UIColor+Extension.swift in Sources */,
+				FA7307E727E4492800ECBBAF /* AuthInteractor.swift in Sources */,
 				FAF1114527E31E4D006F4638 /* AccountRouter.swift in Sources */,
 				FAF1112927E304E3006F4638 /* EmailRule.swift in Sources */,
 				FA9A415127AD07930019334C /* StubService.swift in Sources */,
@@ -1259,6 +1353,7 @@
 				FAF1112727E30477006F4638 /* RequiredRule.swift in Sources */,
 				FAF1113727E31A1E006F4638 /* WindowPresenter.swift in Sources */,
 				FAF1112527E3041E006F4638 /* Rule.swift in Sources */,
+				FA7307E427E445B800ECBBAF /* UITextField+Extension.swift in Sources */,
 				FA9A412327ABD6CE0019334C /* HomeModuleBuilder.swift in Sources */,
 				FA88F2AB27E0C03500AEEFE6 /* ImageHTTPService.swift in Sources */,
 				FA04E16D27B11CB900C3C97B /* CartViewController.swift in Sources */,
@@ -1273,12 +1368,16 @@
 				FAF1113427E319A5006F4638 /* Window.swift in Sources */,
 				FA9A415827AD0FFC0019334C /* GroceryItemViewModel.swift in Sources */,
 				FA9A40E127ABD3130019334C /* SceneDelegate.swift in Sources */,
+				FA7307F927E46B9000ECBBAF /* AuthStatusViewModel.swift in Sources */,
 				FAF3B0A227E219A200A71A38 /* LoginViewController.swift in Sources */,
 				FAF1112D27E3074B006F4638 /* PasswordRule.swift in Sources */,
+				FA7307EC27E44AF400ECBBAF /* AuthAPI.swift in Sources */,
 				FA575D4027B68ECE00CD15EE /* ImageInteractor.swift in Sources */,
+				FA7307EA27E44ACE00ECBBAF /* AuthService.swift in Sources */,
 				FAF3B0B827E236FB00A71A38 /* UIStackViewFactory.swift in Sources */,
 				FA9A415427AD092A0019334C /* GroceryResult.swift in Sources */,
 				FA04E16727B0F61000C3C97B /* RealmCartItem.swift in Sources */,
+				FA7307F227E44D2100ECBBAF /* AuthHTTPRouter.swift in Sources */,
 				FA04E17527B11E6800C3C97B /* ProfileViewController.swift in Sources */,
 				FA04E18427B1219A00C3C97B /* TabBarRouter.swift in Sources */,
 				FAF1114727E31E62006F4638 /* AccountBuilder.swift in Sources */,
@@ -1291,6 +1390,7 @@
 				FAF3B0A727E219FC00A71A38 /* LoginView.swift in Sources */,
 				FA13CB0327BA6EC700555523 /* GroceriesListRouter.swift in Sources */,
 				FA9A414227AC00670019334C /* CartValueViewModel.swift in Sources */,
+				FA7307EE27E44C4900ECBBAF /* AuthHTTPService.swift in Sources */,
 				FAF1115C27E33AFB006F4638 /* SignUpRouter.swift in Sources */,
 				FAF1115E27E33B59006F4638 /* SignUpBuilder.swift in Sources */,
 			);

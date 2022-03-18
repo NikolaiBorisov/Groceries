@@ -23,12 +23,14 @@ final class UITextFieldFactory {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.leftViewMode = .always
         textField.leftView = insetView
-        textField.backgroundColor = .white
         textField.placeholder = placeholder.rawValue
         textField.clearButtonMode = .whileEditing
         textField.autocapitalizationType = .sentences
         textField.returnKeyType = .done
         textField.borderStyle = .roundedRect
+        textField.textColor = .label
+        textField.placeholderColor(.systemGray)
+        textField.tintColor = .systemGreen
         return textField
     }
     

@@ -10,6 +10,7 @@ import UIKit
 protocol SignUpViewProtocol: AnyObject {
     func updateInvalidFields()
     func updateProgress(isCompleted: Bool)
+    func updateStatus(using viewModel: AuthStatusViewModel)
 }
 
 final class SignUpViewController: UIViewController {
@@ -45,7 +46,11 @@ extension SignUpViewController: SignUpViewDelegate {
         case ButtonTitle.signUp.rawValue:
             presenter.validate(using: mainView.getFields()) { isValid in
                 if isValid {
-                    // sign up
+                    presenter.signUp(
+                        userName: mainView.nameControlText,
+                        email: mainView.emailControlText,
+                        password: mainView.passwordControlText
+                    )
                 }
             }
         case ButtonTitle.loginNow.rawValue:
@@ -60,12 +65,16 @@ extension SignUpViewController: SignUpViewDelegate {
 
 extension SignUpViewController: SignUpViewProtocol {
     
+    func updateStatus(using viewModel: AuthStatusViewModel) {
+        mainView.setStatusLabel(using: viewModel)
+    }
+    
     func updateInvalidFields() {
         mainView.setErrorMessage()
     }
     
     func updateProgress(isCompleted: Bool) {
-        
+        mainView.setSignUpButtonTitle(isCompleted: isCompleted)
     }
     
 }

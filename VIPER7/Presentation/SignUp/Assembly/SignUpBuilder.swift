@@ -12,7 +12,11 @@ final class SignUpBuilder {
     static func build(switchLogin: @escaping () -> Void) -> UIViewController {
         let vc = SignUpViewController()
         let router = SignUpRouter(viewController: vc, switchLogin: switchLogin)
-        let presenter = SignUpPresenter(router: router)
+        let authInteractor = AuthInteractor.shared
+        let presenter = SignUpPresenter(
+            router: router,
+            useCases: (signUp: authInteractor.signUp, ())
+        )
         vc.presenter = presenter
         presenter.view = vc
         return vc
