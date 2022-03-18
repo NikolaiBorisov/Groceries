@@ -9,10 +9,20 @@ import UIKit
 
 final class LoginBuilder {
     
-    static func build(switchSignUp: @escaping () -> Void) -> UIViewController {
+    static func build(switchSignUp: @escaping () -> Void, onLogin: @escaping () -> Void) -> UIViewController {
         let vc = LoginViewController()
-        let router = LoginRouter(viewController: vc, switchSignUp: switchSignUp)
-        let presenter = LoginPresenter(router: router)
+        let router = LoginRouter(
+            viewController: vc,
+            switchSignUp: switchSignUp,
+            onLogin: onLogin
+        )
+        let authInteractor = AuthInteractor.shared
+        let presenter = LoginPresenter(
+            router: router,
+            useCases: (
+                login: authInteractor.login,
+                validate: authInteractor.validate)
+        )
         vc.presenter = presenter
         presenter.view = vc
         return vc

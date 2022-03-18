@@ -9,7 +9,8 @@ import UIKit
 
 protocol LoginViewProtocol: AnyObject {
     func updateInvalidFields()
-    func updateProgress(isCompleted: Bool)
+    func updateProgress(message: String, isCompleted: Bool)
+    func updateStatus(using viewModel: AuthStatusViewModel)
 }
 
 final class LoginViewController: UIViewController {
@@ -44,8 +45,12 @@ extension LoginViewController: LoginViewDelegate {
         switch withTitle {
         case ButtonTitle.login.rawValue:
             presenter.validate(using: mainView.getFields()) { isValid in
+                /// If client validation is completed, let's do the login process
                 if isValid {
-                    
+                    presenter.login(
+                        email: mainView.emailAccountText,
+                        password: mainView.passwordAccountText
+                    )
                 }
             }
         case ButtonTitle.signUp.rawValue:
@@ -60,8 +65,12 @@ extension LoginViewController: LoginViewDelegate {
 
 extension LoginViewController: LoginViewProtocol {
     
-    func updateProgress(isCompleted: Bool) {
-        mainView.updateProgress(isCompleted: isCompleted)
+    func updateStatus(using viewModel: AuthStatusViewModel) {
+        mainView.setStatusLabel(using: viewModel)
+    }
+    
+    func updateProgress(message: String, isCompleted: Bool) {
+        mainView.updateProgress(message: message, isCompleted: isCompleted)
     }
     
     func updateInvalidFields() {

@@ -46,6 +46,15 @@
 		FA7307F927E46B9000ECBBAF /* AuthStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307F827E46B9000ECBBAF /* AuthStatusViewModel.swift */; };
 		FA7307FC27E46C2900ECBBAF /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307FB27E46C2900ECBBAF /* ColorConstant.swift */; };
 		FA7307FE27E46E8800ECBBAF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7307FD27E46E8800ECBBAF /* UIColor+Extension.swift */; };
+		FA73080127E494FA00ECBBAF /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080027E494FA00ECBBAF /* LoginError.swift */; };
+		FA73080327E4A3FB00ECBBAF /* RealmTokenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080227E4A3FB00ECBBAF /* RealmTokenUser.swift */; };
+		FA73080527E4A51300ECBBAF /* TokenUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080427E4A51300ECBBAF /* TokenUser.swift */; };
+		FA73080727E4A6DA00ECBBAF /* AuthDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080627E4A6DA00ECBBAF /* AuthDB.swift */; };
+		FA73080927E4A75800ECBBAF /* RealmDatabase+AuthDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080827E4A75800ECBBAF /* RealmDatabase+AuthDB.swift */; };
+		FA73080B27E4AB2A00ECBBAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080A27E4AB2A00ECBBAF /* User.swift */; };
+		FA73080D27E4AEE000ECBBAF /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080C27E4AEE000ECBBAF /* ValidationError.swift */; };
+		FA73080F27E4AF6900ECBBAF /* ValidationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73080E27E4AF6900ECBBAF /* ValidationResponse.swift */; };
+		FA73081127E4B90600ECBBAF /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73081027E4B90600ECBBAF /* RealmUser.swift */; };
 		FA88F2A627E084D000AEEFE6 /* SingleCategoryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */; };
 		FA88F2A827E09BBF00AEEFE6 /* Grocery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */; };
 		FA88F2AB27E0C03500AEEFE6 /* ImageHTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */; };
@@ -176,6 +185,15 @@
 		FA7307F827E46B9000ECBBAF /* AuthStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatusViewModel.swift; sourceTree = "<group>"; };
 		FA7307FB27E46C2900ECBBAF /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		FA7307FD27E46E8800ECBBAF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FA73080027E494FA00ECBBAF /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
+		FA73080227E4A3FB00ECBBAF /* RealmTokenUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTokenUser.swift; sourceTree = "<group>"; };
+		FA73080427E4A51300ECBBAF /* TokenUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUser.swift; sourceTree = "<group>"; };
+		FA73080627E4A6DA00ECBBAF /* AuthDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDB.swift; sourceTree = "<group>"; };
+		FA73080827E4A75800ECBBAF /* RealmDatabase+AuthDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmDatabase+AuthDB.swift"; sourceTree = "<group>"; };
+		FA73080A27E4AB2A00ECBBAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA73080C27E4AEE000ECBBAF /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		FA73080E27E4AF6900ECBBAF /* ValidationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResponse.swift; sourceTree = "<group>"; };
+		FA73081027E4B90600ECBBAF /* RealmUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		FA88F2A527E084D000AEEFE6 /* SingleCategoryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCategoryResult.swift; sourceTree = "<group>"; };
 		FA88F2A727E09BBF00AEEFE6 /* Grocery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grocery.swift; sourceTree = "<group>"; };
 		FA88F2AA27E0C03500AEEFE6 /* ImageHTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHTTPService.swift; sourceTree = "<group>"; };
@@ -309,9 +327,11 @@
 		FA04E16227B0F16F00C3C97B /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				FA73080627E4A6DA00ECBBAF /* AuthDB.swift */,
 				FA04E16327B0F18800C3C97B /* RealmDatabase.swift */,
 				FA04E16527B0F28800C3C97B /* Entity */,
 				FA04E16827B0F6F800C3C97B /* Model */,
+				FA73080827E4A75800ECBBAF /* RealmDatabase+AuthDB.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -320,6 +340,8 @@
 			isa = PBXGroup;
 			children = (
 				FA04E16627B0F61000C3C97B /* RealmCartItem.swift */,
+				FA73080227E4A3FB00ECBBAF /* RealmTokenUser.swift */,
+				FA73081027E4B90600ECBBAF /* RealmUser.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -759,6 +781,11 @@
 				FAF1114827E320B2006F4638 /* GroceryScreen.swift */,
 				FA7307F327E44F8800ECBBAF /* AuthModel.swift */,
 				FA7307F527E45FAC00ECBBAF /* SignUpError.swift */,
+				FA73080027E494FA00ECBBAF /* LoginError.swift */,
+				FA73080427E4A51300ECBBAF /* TokenUser.swift */,
+				FA73080A27E4AB2A00ECBBAF /* User.swift */,
+				FA73080C27E4AEE000ECBBAF /* ValidationError.swift */,
+				FA73080E27E4AF6900ECBBAF /* ValidationResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1312,8 +1339,10 @@
 				FAF1112127E2FCFE006F4638 /* AccountTextControl.swift in Sources */,
 				FA9A40E327ABD3130019334C /* HomeViewController.swift in Sources */,
 				FAF1113D27E31B7D006F4638 /* WindowBuilder.swift in Sources */,
+				FA73080127E494FA00ECBBAF /* LoginError.swift in Sources */,
 				FA9A40DF27ABD3130019334C /* AppDelegate.swift in Sources */,
 				FAE8D35927B3AAE300FCB1C2 /* HTTPService.swift in Sources */,
+				FA73080D27E4AEE000ECBBAF /* ValidationError.swift in Sources */,
 				FA575D3C27B6822B00CD15EE /* CategoriesHomeView.swift in Sources */,
 				FA7307F627E45FAC00ECBBAF /* SignUpError.swift in Sources */,
 				FA7307F427E44F8800ECBBAF /* AuthModel.swift in Sources */,
@@ -1336,11 +1365,14 @@
 				FA575D3827B67A8900CD15EE /* CategoryView.swift in Sources */,
 				FA88F2A827E09BBF00AEEFE6 /* Grocery.swift in Sources */,
 				FA04E16127B0E90300C3C97B /* NavigationBuilder.swift in Sources */,
+				FA73080B27E4AB2A00ECBBAF /* User.swift in Sources */,
 				FA88F2A627E084D000AEEFE6 /* SingleCategoryResult.swift in Sources */,
 				FA7307FE27E46E8800ECBBAF /* UIColor+Extension.swift in Sources */,
 				FA7307E727E4492800ECBBAF /* AuthInteractor.swift in Sources */,
+				FA73080927E4A75800ECBBAF /* RealmDatabase+AuthDB.swift in Sources */,
 				FAF1114527E31E4D006F4638 /* AccountRouter.swift in Sources */,
 				FAF1112927E304E3006F4638 /* EmailRule.swift in Sources */,
+				FA73080527E4A51300ECBBAF /* TokenUser.swift in Sources */,
 				FA9A415127AD07930019334C /* StubService.swift in Sources */,
 				FAD7B32327B2300A002B7519 /* AppImage.swift in Sources */,
 				FAF1115327E33808006F4638 /* LoginRouter.swift in Sources */,
@@ -1351,12 +1383,15 @@
 				FAF1112B27E30682006F4638 /* MinimumLengthRule.swift in Sources */,
 				FA9A414927AD04350019334C /* GroceryItemCell.swift in Sources */,
 				FAF1112727E30477006F4638 /* RequiredRule.swift in Sources */,
+				FA73081127E4B90600ECBBAF /* RealmUser.swift in Sources */,
+				FA73080327E4A3FB00ECBBAF /* RealmTokenUser.swift in Sources */,
 				FAF1113727E31A1E006F4638 /* WindowPresenter.swift in Sources */,
 				FAF1112527E3041E006F4638 /* Rule.swift in Sources */,
 				FA7307E427E445B800ECBBAF /* UITextField+Extension.swift in Sources */,
 				FA9A412327ABD6CE0019334C /* HomeModuleBuilder.swift in Sources */,
 				FA88F2AB27E0C03500AEEFE6 /* ImageHTTPService.swift in Sources */,
 				FA04E16D27B11CB900C3C97B /* CartViewController.swift in Sources */,
+				FA73080727E4A6DA00ECBBAF /* AuthDB.swift in Sources */,
 				FAE8D36127B3B46200FCB1C2 /* Categories.swift in Sources */,
 				FA04E17C27B1202B00C3C97B /* GroceryTabBarController.swift in Sources */,
 				FAF3B0B627E2351700A71A38 /* UIButtonFactory.swift in Sources */,
@@ -1378,6 +1413,7 @@
 				FA9A415427AD092A0019334C /* GroceryResult.swift in Sources */,
 				FA04E16727B0F61000C3C97B /* RealmCartItem.swift in Sources */,
 				FA7307F227E44D2100ECBBAF /* AuthHTTPRouter.swift in Sources */,
+				FA73080F27E4AF6900ECBBAF /* ValidationResponse.swift in Sources */,
 				FA04E17527B11E6800C3C97B /* ProfileViewController.swift in Sources */,
 				FA04E18427B1219A00C3C97B /* TabBarRouter.swift in Sources */,
 				FAF1114727E31E62006F4638 /* AccountBuilder.swift in Sources */,

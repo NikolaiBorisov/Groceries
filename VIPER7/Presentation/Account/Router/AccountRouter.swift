@@ -16,16 +16,19 @@ protocol AccountRouterProtocol {
 final class AccountRouter {
     
     typealias Submodules = (
-        loginModule: (_ switchSignUp: @escaping () -> Void) -> UIViewController,
+        loginModule: (_ switchSignUp: @escaping () -> Void, @escaping () -> Void) -> UIViewController,
         signUpModule: (_ switchLogin: @escaping () -> Void) -> UIViewController
     )
     
     // MARK: - Private Properties
     
+    private var onLogin: () -> Void
     private let viewController: UIViewController
     private let submodules: Submodules
-    private lazy var loginView = submodules.loginModule { [weak self] in
+    private lazy var loginView = submodules.loginModule({ [weak self] in
         self?.showSignup()
+    }) { [weak self] in
+        self?.onLogin()
     }
     private lazy var signUpView = submodules.signUpModule { [weak self] in
         self?.showLogin()
@@ -33,9 +36,14 @@ final class AccountRouter {
     
     // MARK: - Initializers
     
-    init(viewController: UIViewController, submodules: Submodules) {
+    init(
+        viewController: UIViewController,
+        submodules: Submodules,
+        onLogin: @escaping () -> Void
+    ) {
         self.viewController = viewController
         self.submodules = submodules
+        self.onLogin = onLogin
     }
     
 }

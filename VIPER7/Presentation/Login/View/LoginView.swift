@@ -17,6 +17,14 @@ final class LoginView: UIView {
     
     public weak var delegate: LoginViewDelegate?
     
+    public var emailAccountText: String {
+        emailAccountControl.validationText
+    }
+    
+    public var passwordAccountText: String {
+        passwordAccountControl.validationText
+    }
+    
     // MARK: - Private Properties
     
     private lazy var titleLabel = UILabelFactory.generate(with: .greenGrocery, fontSize: 30)
@@ -85,13 +93,18 @@ final class LoginView: UIView {
         passwordAccountControl.setErrorMessage()
     }
     
-    public func updateProgress(isCompleted: Bool) {
+    public func updateProgress(message: String, isCompleted: Bool) {
         loginButton.isEnabled = isCompleted
-        loginButton.setTitle(isCompleted ? "Login" : "Loggin In...", for: .normal)
+        loginButton.setTitle(message, for: .normal)
         if isCompleted {
             emailAccountControl.inputTextField.text = ""
             passwordAccountControl.inputTextField.text = ""
         }
+    }
+    
+    public func setStatusLabel(using viewModel: AuthStatusViewModel) {
+        statusLabel.text = viewModel.title
+        statusLabel.textColor = UIColor(hex: viewModel.color.rawValue)
     }
     
     // MARK: - Private Methods

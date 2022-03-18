@@ -52,7 +52,7 @@ extension SignUpPresenter: SignUpPresenterProtocol {
             switch result {
             case .success(let message):
                 self.view.updateStatus(using: AuthStatusViewModel(title: message, color: .success))
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
                     self?.router.routeToLogin()
                 }
                 break

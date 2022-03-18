@@ -11,6 +11,7 @@ import Alamofire
 enum AuthHTTPRouter {
     case login(AuthModel)
     case signUp(AuthModel)
+    case validate(token: String)
 }
 
 // MARK: - HTTPRouter
@@ -27,6 +28,8 @@ extension AuthHTTPRouter: HTTPRouter {
             return "login"
         case .signUp:
             return "register"
+        case .validate:
+            return "user"
         }
     }
     
@@ -34,6 +37,8 @@ extension AuthHTTPRouter: HTTPRouter {
         switch self {
         case .login, .signUp:
             return .post
+        case .validate:
+            return .get
         }
     }
     
@@ -41,6 +46,11 @@ extension AuthHTTPRouter: HTTPRouter {
         switch self {
         case .login, .signUp:
             return ["Content-Type": "application/json; charset=UTF-8"]
+        case .validate(let token):
+            return [
+                "Authorization": "Bearer \(token)",
+                "Content-Type": "application/json; charset=UTF-8"
+            ]
         }
     }
     
@@ -52,6 +62,8 @@ extension AuthHTTPRouter: HTTPRouter {
         switch self {
         case .login(let user), .signUp(let user):
             return try JSONEncoder().encode(user)
+        case .validate:
+            return nil
         }
     }
     

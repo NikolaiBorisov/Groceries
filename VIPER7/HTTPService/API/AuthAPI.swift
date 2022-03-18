@@ -24,4 +24,10 @@ protocol AuthAPI {
         failure: @escaping (_ error: String) -> Void
     )
     
+    func validate(
+        token: String,
+        success: @escaping (_ token: User) -> Void,
+        failure: @escaping (_ error: String) -> Void
+    )
+    
 }

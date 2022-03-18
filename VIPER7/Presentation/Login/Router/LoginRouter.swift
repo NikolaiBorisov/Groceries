@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginRouterProtocol {
     func routeToSignUp()
+    func routeToWindow()
 }
 
 final class LoginRouter {
@@ -17,12 +18,18 @@ final class LoginRouter {
     
     private var viewController: UIViewController
     private let switchSignUp: () -> Void
+    private let onLogin: () -> Void
     
     // MARK: - Initializers
     
-    init(viewController: UIViewController, switchSignUp: @escaping () -> Void) {
+    init(
+        viewController: UIViewController,
+        switchSignUp: @escaping () -> Void,
+        onLogin: @escaping () -> Void
+    ) {
         self.viewController = viewController
         self.switchSignUp = switchSignUp
+        self.onLogin = onLogin
     }
     
 }
@@ -30,6 +37,10 @@ final class LoginRouter {
 // MARK: - LoginRouterProtocol
 
 extension LoginRouter: LoginRouterProtocol {
+    
+    func routeToWindow() {
+        onLogin()
+    }
     
     func routeToSignUp() {
         switchSignUp()

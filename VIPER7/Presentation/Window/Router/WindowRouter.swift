@@ -19,7 +19,7 @@ final class WindowRouter {
     }
     
     typealias Submodules = (
-        accountModule: () -> UIViewController,
+        accountModule: (_ onLogin: @escaping () -> Void) -> UIViewController,
         tabBarModule: () -> UIViewController
     )
     
@@ -33,7 +33,19 @@ final class WindowRouter {
     
     init(_ window: Window, submodules: Submodules) {
         self.window = window
-        self.accountView = submodules.accountModule()
+        self.accountView = submodules.accountModule { [ weak self] in
+            guard let self = self else { return }
+            UIView.transition(
+                with: window,
+                duration: 0.3,
+                options: .curveEaseIn,
+                animations: {
+                    window.rootViewController = self.tabBarView
+                    window.makeKeyAndVisible()
+                },
+                completion: nil
+            )
+        }
         self.tabBarView = submodules.tabBarModule()
     }
     

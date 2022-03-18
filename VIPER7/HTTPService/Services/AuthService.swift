@@ -29,6 +29,43 @@ final class AuthService {
 
 extension AuthService: AuthAPI {
     
+    func validate(
+        token: String,
+        success: @escaping (User) -> Void,
+        failure: @escaping (String) -> Void
+    ) {
+        do {
+            try AuthHTTPRouter
+                .validate(token: token)
+                .request(using: httpService)
+                .responseJSON { result in
+                    guard result.response?.statusCode == 200 else {
+                        if let data = result.data {
+                            do {
+                                let logoutError = try
+                                JSONDecoder().decode(ValidationError.self, from: data)
+                                failure(logoutError.message)
+                            } catch {
+                                failure("Token validation failed")
+                            }
+                        }
+                        return
+                    }
+                    if let responseData = result.data {
+                        do {
+                            let validationResponse = try
+                            JSONDecoder().decode(ValidationResponse.self, from: responseData)
+                            success(validationResponse.user)
+                        } catch {
+                            failure("Token validation failed")
+                        }
+                    }
+                }
+        } catch {
+            
+        }
+    }
+    
     func signUp(
         userName: String,
         email: String,
@@ -87,7 +124,35 @@ extension AuthService: AuthAPI {
         success: @escaping (String) -> Void,
         failure: @escaping (String) -> Void
     ) {
-        
+        do {
+            try AuthHTTPRouter
+                .login(AuthModel(email: email, password: password))
+                .request(using: httpService)
+                .responseJSON { result in
+                    guard result.response?.statusCode == 200 else {
+                        if let data = result.data {
+                            do {
+                                let loginError = try JSONDecoder().decode(LoginError.self, from: data)
+                                failure(loginError.error)
+                            } catch {
+                                print("Login Error: \(error)")
+                                failure("Login failed")
+                            }
+                        }
+                        return
+                    }
+                    guard
+                        let dictionary = result.value as? [String: Any],
+                        let token = dictionary["token"] as? String else {
+                            failure("Login Failed")
+                            return
+                        }
+                    success(token)
+                }
+        } catch {
+            print("Login error: \(error)")
+            failure("Login failed")
+        }
     }
     
 }
